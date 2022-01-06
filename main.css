@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Luxurious Roman", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: auto;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  width: 98vw;
+}
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 95vh;
+  border-radius: 80px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 8px;
+  position: relative;
+  transition: flex 3s ease-in-out;
+}
+.panel h3 {
+  position: absolute;
+  font-size: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 20px;
+  left: calc(50% - 60px);
+  margin: 0;
+  opacity: 0;
+}
+.panel.active {
+  flex: 10;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 2.8s ease-in-out 2s;
+}
+@media (max-width: 720px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
